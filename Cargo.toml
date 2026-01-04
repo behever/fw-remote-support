@@ -4,7 +4,7 @@ version = "1.4.4"
 authors = ["rustdesk <info@rustdesk.com>"]
 edition = "2021"
 build= "build.rs"
-description = "RustDesk Remote Desktop"
+description = "FW Remote Support"
 default-run = "rustdesk"
 rust-version = "1.75"
 
@@ -200,8 +200,8 @@ exclude = ["vdi/host", "examples/custom_plugin"]
 
 [package.metadata.winres]
 LegalCopyright = "Copyright © 2025 Purslane Ltd. All rights reserved."
-ProductName = "RustDesk"
-FileDescription = "RustDesk Remote Desktop"
+ProductName = "FW Remote Support"
+FileDescription = "FW Remote Support"
 OriginalFilename = "rustdesk.exe"
 
 [target.'cfg(target_os="windows")'.build-dependencies]
