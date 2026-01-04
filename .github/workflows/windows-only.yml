@@ -132,12 +132,14 @@ jobs:
 
       - name: Build installer
         run: |
+          sed -i '/dpiAware/d' res/manifest.xml
           pushd ./libs/portable
           pip3 install -r requirements.txt
           python3 ./generate.py -f ../../rustdesk/ -o . -e ../../rustdesk/rustdesk.exe
           popd
           mkdir -p ./SignOutput
-          mv ./libs/portable/rustdesk-portable-packer.exe ./SignOutput/fw-remote-support-${{ env.VERSION }}-x86_64.exe
+          mv ./target/release/rustdesk-portable-packer.exe ./SignOutput/fw-remote-support-${{ env.VERSION }}-x86_64.exe
+        shell: bash
 
       - name: Upload Windows installer
         uses: actions/upload-artifact@master
